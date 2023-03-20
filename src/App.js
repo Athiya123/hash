@@ -17,7 +17,7 @@ function App() {
       <Navbar />
       <Container>
         <Routes>
-          <Route path="/checkpoint-hash-markt-Athiya123" exact element={<Products />} />
+          <Route path="/hash" exact element={<Products />} />
           <Route path="/:category_id" element={<Products />} />
           <Route path="/product/:product_id" element={<ProductDetail />} />
           <Route path="/cart" element={<Cart />} />
