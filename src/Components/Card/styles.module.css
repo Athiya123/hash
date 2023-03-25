@@ -20,6 +20,7 @@
   rounded-md 
   overflow-hidden
   h-full
+  bg-white
 }
 
 /***** CARD HEADER STYLES START *****/
@@ -112,6 +113,7 @@
   @apply  
   font-light 
   truncate 
+  text-black
 }
 
 /***** STAR ICON STYLES START *****/
