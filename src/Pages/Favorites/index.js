@@ -23,7 +23,7 @@ const Favorites = () => {
               <p className="text-center mt-2 font-bold text-black tracking-wide">
                 Add the products you like to your favorites to buy them later.
               </p>
-              <Link to="/">
+              <Link to="/hash">
                 <div className={styles.continueButton}>
                   <button className={styles.button}>
                     <div className="flex flex-col self-center">
@@ -38,9 +38,27 @@ const Favorites = () => {
           </div>
         </div>
       )}
-      /**
-        * Your code goes here
-       */
+
+      {favoriteItems.length > 0 && (
+        <div className={styles.cardGroup}>
+          {favoriteItems.map((item) => {
+            const findFavoriteItem = favoriteItems.find(
+              (fav_item) => fav_item.id === item.id
+            )
+            const findCartItem = items.find((cart_item) => cart_item.id === item.id)
+            return (
+              <Card
+                item={item}
+                findFavoriteItem={findFavoriteItem}
+                favoriteItems={favoriteItems}
+                addToFavorite={addToFavorite}
+                addToCart={addToCart}
+                findCartItem={findCartItem}
+              />
+            )
+          })}
+        </div>
+      )}
     </div>
   )
 }
