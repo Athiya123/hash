@@ -23,7 +23,7 @@ const FavoriteProvider = ({children}) => {
   const removeFromFavorite = (item_id) => {
         const filtered = favoriteItems.filter((favoriteItems) => favoriteItems.id !== item_id)
         setFavoriteItems(filtered)
-      }
+  }
 
   const values = {
     favoriteItems,

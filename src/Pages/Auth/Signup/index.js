@@ -3,7 +3,116 @@ import { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../../../Context/AuthContext'
 import validations from './validations'
+import styled from 'styled-components'
+const A = styled.div`
+    
+    height:450px;
+    width:500px;
+    border:2px solid yellow;
+    position:relative;
+   
+    justify-content:center;
+    left :450px;
+    top:50px;
+   
+   
+`;
+const B = styled.div`
+  position:relative;
+  justify-content:center;
+  left:180px;
+  color:white;
+  top:20px;
+  font-size:50px;
+`;
 
+const C = styled.input`
+  width:250px;
+  position:relative;
+  top:10px;
+  left:130px;
+  padding:5px;
+  margin-top:10px;
+  border-radius:5px; 
+  border: 2px solid #fccf03;
+  color:black;
+  
+`;
+const F = styled.input`
+  width:250px;
+  position:relative;
+  top:10px;
+  left:130px;
+  padding:5px;
+  margin-top:10px;
+  border-radius:5px;
+  border: 2px solid #fccf03;
+  color:black;
+  
+`;
+const G = styled.input`
+  width:250px;
+  position:relative;
+  top:10px;
+  left:130px;
+  padding:5px;
+  margin-top:10px;
+  border-radius:5px;
+  border: 2px solid #fccf03;
+  color:black;
+  
+`;
+const H= styled.input`
+  width:250px;
+  position:relative;
+  top:10px;
+  left:130px;
+  padding:5px;
+  margin-top:10px;
+  border-radius:5px;
+  border: 2px solid #fccf03;
+  color:black;
+  
+`;
+const D = styled.span`
+position: relative;
+top:25px;
+left :130px;
+margin-top: 30px;
+span{
+  display: flex;
+  flex-direction: row;
+}
+p{
+  color: #fccf03;
+  padding-left: 5px;
+}
+`;
+
+const E = styled.button`
+background-color: #fccf03;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  width: 55%;
+  height: 20px;
+  position: relative;
+  left:125px;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+ 
+`;
+const J = styled.span`
+color: red;
+font-size: 12px;
+display:flex;
+position: relative;
+top:15px;
+left:125px;
+align-items:center;
+`
 const Signup = () => {
   const {
     currentUser,
@@ -35,9 +144,9 @@ const Signup = () => {
 
   return (
     <div >
-      <div >
+      <A>
         <div>
-          <h2 >Sign Up</h2>
+          <B >Sign Up</B>
         </div>
         <form
           autoComplete="off"
@@ -46,8 +155,8 @@ const Signup = () => {
           <div >
             <div>
             {errors.firstName && <span>{errors.firstName}</span>}
-              <label >First Name</label>
-              <input
+              {/* <label >First Name</label> */}
+              <C
                 type="text"
                 onChange={handleSignUpFormChange}
                 value={currentUser.firstName}
@@ -59,8 +168,8 @@ const Signup = () => {
 
             <div>
             {errors.lastName && <span>{errors.lastName}</span>}
-              <label>Last Name</label>
-              <input
+              {/* <label>Last Name</label> */}
+              <C
                 type="text"
                 onChange={handleSignUpFormChange}
                 value={currentUser.lastName}
@@ -71,8 +180,8 @@ const Signup = () => {
             </div>
             <div>
             {errors.email && <span >{errors.email}</span>}
-              <label>Email</label>
-              <input
+              {/* <label>Email</label> */}
+              <F
                 type="email"
                 onChange={handleSignUpFormChange}
                 value={currentUser.email}
@@ -82,9 +191,9 @@ const Signup = () => {
               
             </div>
             <div>
-            {errors.password && <span >{errors.password}</span>}
-              <label >Password</label>
-              <input
+            {errors.password && <J>{errors.password}</J>}
+              {/* <label >Password</label> */}
+              <G
                 type="Password"
                 onChange={handleSignUpFormChange}
                 value={currentUser.password}
@@ -94,9 +203,9 @@ const Signup = () => {
               
             </div>
             <div>
-            {errors.passwordConfirm && <span>{errors.passwordConfirm}</span>}
-              <label >Password Confirm</label>
-              <input
+            {errors.passwordConfirm && <J>{errors.passwordConfirm}</J>}
+              {/* <label >Password Confirm</label> */}
+              <H
                 type="Password"
                 onChange={handleSignUpFormChange}
                 value={currentUser.passwordConfirm}
@@ -107,26 +216,30 @@ const Signup = () => {
             </div>
             <div >
               <div >
+                <D>
                 <span>
                   Already have an account? Login{" "}
                   <Link to="/signin" >
-                    {" "}
+                    <p>{" "}
                     here.
+                    </p>
                   </Link>
                 </span>
+
+                </D>
               </div>
             </div>
             <div >
-              <button type="submit" >
-                <IdentificationIcon
+              <E type="submit" >
+                <IdentificationIcon className = 'h-6 w-6'
                   aria1-hidden="true"
                 />
                 Sign Up
-              </button>
+              </E>
             </div>
           </div>
         </form>
-      </div>
+      </A>
     </div>
   )
 }
